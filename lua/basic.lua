@@ -37,17 +37,17 @@ local options = {
 	guifontwide = "MeiryoKe_Console:h10:cDEFAULT",
 	wildoptions = "pum",
 	signcolumn = "auto",
-	cursorilne = true,
+	cursorline = true,
 	swapfile = false,
 	undofile = true,
-	undodir = "~/.nvimundo",
+	undodir = "~/.nvimundo"
 }
 
-for k,v in options do
+for k,v in pairs(options) do
 	vim.opt[k] = v
 end
 
 vim.opt.nrformats = ''
 vim.opt.spelllang:append({c=true,j=true,k=true})
-vim.opt.lsitchars = {tab:'>-'}
+vim.opt.listchars = {tab=">-"}
 
