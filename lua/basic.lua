@@ -36,11 +36,12 @@ local options = {
 	guifont = "Cascedia_Code:h10:cShiftJIS:qDraft",
 	guifontwide = "MeiryoKe_Console:h10:cDEFAULT",
 	wildoptions = "pum",
+	pumblend = 5,
 	signcolumn = "auto",
 	cursorline = true,
 	swapfile = false,
 	undofile = true,
-	undodir = "~/.nvimundo"
+	undodir = vim.fs.normalize("~/.nvimundo"),
 }
 
 for k,v in pairs(options) do
