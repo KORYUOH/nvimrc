@@ -47,6 +47,7 @@ local options = {
 	swapfile = false,
 	undofile = true,
 	undodir = vim.fs.normalize("~/.nvimundo"),
+	mouse = "a"
 }
 
 for k,v in pairs(options) do
@@ -57,5 +58,6 @@ vim.opt.nrformats = ''
 vim.opt.spelllang:append({c=true,j=true,k=true})
 vim.opt.listchars = {tab=">-"}
 vim.opt.backspace = {indent=true,eol = true,start = true}
+vim.opt.formatoptions:append({m=true,M=true})
 
 
