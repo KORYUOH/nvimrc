@@ -1,7 +1,7 @@
 ﻿--------------------------------------------------------------------------------
 -- Brief:	basic setting for neovim
 -- Create:	2024/09/20
--- Update:	2024/09/20
+-- Update:	2024/09/21
 -- Author:	KORYUOH
 -- github:	KORYUOH/nvimrc
 --------------------------------------------------------------------------------
@@ -26,6 +26,7 @@ local options = {
 	cmdheight = 2,
 	laststatus = 2,
 	imsearch = 0,
+	autochdir = true,
 	autoindent = true,
 	buflisted = false,
 	showmatch = true,
@@ -33,7 +34,11 @@ local options = {
 	showcmd = true,
 	wildmenu = true,
 	spell = true,
-	guifont = "Cascedia_Code:h10:cShiftJIS:qDraft",
+	smartcase = true,
+	ignorecase = true,
+	incsearch = true,
+	wrapscan = true,
+	guifont = "Cascadia Code:h10:cShiftJIS:qDraft",
 	guifontwide = "MeiryoKe_Console:h10:cDEFAULT",
 	wildoptions = "pum",
 	pumblend = 5,
@@ -51,4 +56,6 @@ end
 vim.opt.nrformats = ''
 vim.opt.spelllang:append({c=true,j=true,k=true})
 vim.opt.listchars = {tab=">-"}
+vim.opt.backspace = {indent=true,eol = true,start = true}
+
 
