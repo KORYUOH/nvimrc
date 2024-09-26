@@ -30,8 +30,8 @@ vim.g.mapleader = "\\"
 keymap("n" , ";" , ":" , opt)
 
 -- Ctrl + [lh] move tab
-keymap("n" , "<C-h>" , "gT" , opt)
-keymap("n" , "<C-l>" , "gt" , opt)
+keymap("n" , "<C-H>" , "gT" , opt)
+keymap("n" , "<C-L>" , "gt" , opt)
 
 -- tp is close tab
 keymap("n" , "tq" , ":tabclose<CR>",opt)
