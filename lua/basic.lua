@@ -47,17 +47,27 @@ local options = {
 	swapfile = false,
 	undofile = true,
 	undodir = vim.fs.normalize("~/.nvimundo"),
-	mouse = "a"
+	mouse = "a",
+	list = true,
 }
 
 for k,v in pairs(options) do
 	vim.opt[k] = v
 end
 
+vim.opt.fileencodings:prepend({
+	'ucs-bom' ,
+	'utf-8' ,
+	'iso-2022-jp' ,
+	'cp932' ,
+	'sjis' ,
+	'euc-jp' ,
+	'cp20932'
+})
 vim.opt.nrformats = ''
 vim.opt.spelllang:append({c=true,j=true,k=true})
 vim.opt.listchars = {tab=">-"}
-vim.opt.backspace = {indent=true,eol = true,start = true}
+vim.opt.backspace:append({indent = true,eol = true,start = true})
 vim.opt.formatoptions:append({m=true,M=true})
 
 
