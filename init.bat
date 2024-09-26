@@ -19,7 +19,7 @@ exit /b
 :Initialize
 
 @rem プラグインマネージャーのdppを採用
-cd %userprotile%
+cd %userprofile%
 mkdir .neovim_cache\dpp\repos\
 cd .neovim_cache\dpp\repos
 
@@ -33,6 +33,7 @@ git clone git@github.com:Shougo/dpp-ext-installer
 git clone git@github.com:Shougo/dpp-protocol-git
 git clone git@github.com:Shougo/dpp-ext-lazy
 git clone git@github.com:Shougo/dpp-ext-toml
+git clone git@github.com:Shougo/dpp-ext-local
 
 @rem dpp関係が依存しているdenopsのインストール
 cd ..\vim-denops
