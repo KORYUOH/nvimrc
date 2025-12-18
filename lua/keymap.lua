@@ -48,5 +48,7 @@ keymap("n" , "<C-[>" , "%" , opt)
 --- Esc DoubleTouch is NoHilights
 keymap("n" , "<Esc><Esc>" , ":nohlsearch<CR>" , opt)
 
+--- terminal
+keymap( "t" , "<Esc>" , "<C-\\><C-n>" , opt )
 
 
