@@ -22,7 +22,7 @@ import type {
 import type { Denops } from "@denops/std";
 import * as fn from "@denops/std/function";
 
-import { expandGlob } from "@std/fs/expand-glob"; o
+import { expandGlob } from "@std/fs/expand-glob";
 
 export class Config extends BaseConfig {
 	override async config(args: {
@@ -30,23 +30,23 @@ export class Config extends BaseConfig {
 		contextBuilder: ContextBuilder;
 		basePath: string;
 	}): Promise<ConfigReturn> {
-
-		const vimrcs = [];
-
-		args.contextBuilder.setGlobal({
-			vimrcs,
-			extParams: {
-				installer: {
-					checkDiff: true,
-					logFilePath: "~/.neovim_cache/dpp/installer-log.txt",
-					githubAPIToken: Deno.env.get("GITHUB_API_TOKEN"),
-				},
-			},
-			protocols: [
-				"git",
-				"http"
-			],
-		});
+		//
+		// const vimrcs = [];
+		//
+		// args.contextBuilder.setGlobal({
+		// 	vimrcs,
+		// 	extParams: {
+		// 		installer: {
+		// 			checkDiff: true,
+		// 			logFilePath: "~/.neovim_cache/dpp/installer-log.txt",
+		// 			githubAPIToken: Deno.env.get("GITHUB_API_TOKEN"),
+		// 		},
+		// 	},
+		// 	protocols: [
+		// 		"git",
+		// 		"http"
+		// 	],
+		// });
 
 		const [context, options] = await args.contextBuilder.get(args.denops);
 		const protocols = await args.denops.dispatcher.getProtocols() as Record<string, Protocol>;
