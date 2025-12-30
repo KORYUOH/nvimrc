@@ -8,4 +8,5 @@
 
 
 require("plugin_dpp")
+-- require("plugin_dpp_copilot")
 

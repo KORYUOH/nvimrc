@@ -8,6 +8,6 @@
 vim.scriptencoding = 'utf-8'
 vim.env.BASE_DIR = vim.fn.expand("<sfile>:h:p")
 require('basic')
-require('usercommand')
+-- require('usercommand')
 require('keymap')
 require('plugins')
