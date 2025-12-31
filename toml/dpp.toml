@@ -1,7 +1,4 @@
 [[plugins]]
-repo = 'vim-denops/denops.vim'
-
-[[plugins]]
 repo = 'Shougo/dpp.vim'
 
 # dpp.vim plugin

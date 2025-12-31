@@ -109,13 +109,17 @@ end
 ------------------------------------------------------------------------------------------------------------------------
 local dpp_base = cache_dir .. "/dpp"
 
-if not dpp.load_state(dpp_base) then
+local loadstate = dpp.load_state(dpp_base)
+vim.print(loadstate)
+if  loadstate then
 	vim.notify("dpp make state")
 	dpp.make_state( dpp_base , dpp_config )
+else
+	 vim.notify("dpp loadstate is success")
 end
 
 
 
 
--- vim.cmd("filetype indent plugin on")
--- vim.cmd("syntax on")
+vim.cmd("filetype indent plugin on")
+vim.cmd("syntax on")

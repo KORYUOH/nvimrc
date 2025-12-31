@@ -9,63 +9,144 @@
 ########################################
 
 [[plugins]]
-#from neocomplete -> ddc.vim
 repo = 'Shougo/ddc.vim'
-depends=['denops.vim']
-hook_add='''
-let s:hook_name = g:vimrc_folder.'/'.'ddc_setting.vim'
-execute 'source '.s:hook_name
-'''
+depends='denops.vim'
+on_event= ['InsertEnter','CmdlineEnter']
+hooks_file = '$BASE_DIR/vim/ddc.vim'
 
 ## ===== DDC Sources
 
+## UI
 [[plugins]]
-repo = 'Shougo/ddc-ui-native'
-depends = ['denops.vim' , 'ddc.vim']
+repo = 'Shougo/pum.vim'
+hooks_file = '$BASE_DIR/vim/pum.vim'
 
 [[plugins]]
-repo = 'Shougo/ddc-around'
-depends = ['denops.vim' , 'ddc.vim']
+repo = 'Shougo/ddc-ui-pum'
+depends = 'pum.vim'
+group = 'ddc'
+
 
 [[plugins]]
-repo = 'shun/ddc-source-vim-lsp'
-depends = ['denops.vim' , 'ddc.vim']
+repo = 'Shougo/ddc-ui-inline'
+group = 'ddc'
+
+[[plugins]]
+repo = 'Shougo/ddc-ui-none'
+group = 'ddc'
+
+[[plugins]]
+repo = 'Shougo/ddc-source-around'
+group = 'ddc'
+
+[[plugins]]
+repo = 'Shougo/ddc-source-input'
+group = 'ddc'
+
+[[plugins]]
+repo = 'Shougo/ddc-source-rg'
+group = 'ddc'
+
+[[plugins]]
+repo = 'Shougo/ddc-source-line'
+group = 'ddc'
+
+[[plugins]]
+repo = 'Shougo/ddc-source-lsp'
+group = 'ddc'
+
+[[plugins]]
+repo = 'Shougo/ddc-source-cmdline'
+group = 'ddc'
+
+[[plugins]]
+repo = 'Shougo/ddc-source-vim'
+group = 'ddc'
 
 [[plugins]]
 repo = 'matsui54/ddc-source-buffer'
-depends = ['denops.vim' , 'ddc.vim']
+group = 'ddc'
 
 [[plugins]]
 repo = 'LumaKernel/ddc-source-file'
-depends = ['denops.vim' , 'ddc.vim']
+group = 'ddc'
+
+[[plugins]]
+repo = 'Milly/ddc-source-register'
+group = 'ddc'
+
+## Matcher
+
+[[plugins]]
+repo = 'Shougo/ddc-filter-matcher_head'
+group = 'ddc'
+
+[[plugins]]
+repo = 'Shougo/ddc-filter-matcher_length'
+group = 'ddc'
+
+[[plugins]]
+repo = 'Shougo/ddc-filter-matcher_length'
+group = 'ddc'
+
+[[plugins]]
+repo = 'Shougo/ddc-filter-matcher_vimregexp'
+group = 'ddc'
+
+[[plugins]]
+repo = 'Shougo/ddc-filter-matcher_prefix'
+group = 'ddc'
+
+[[plugins]]
+repo = 'Shougo/ddc-filter-matcher_suffix'
+group = 'ddc'
+
+## sorter
+
+[[plugins]]
+repo = 'Shougo/ddc-filter-sorter_rank'
+group = 'ddc'
+
+[[plugins]]
+repo = 'Shougo/ddc-filter-sorter_head'
+group = 'ddc'
+
+[[plugins]]
+repo = 'Shougo/ddc-filter-sorter_lsp_kind'
+group = 'ddc'
+
+## Converter
+
+[[plugins]]
+repo = 'Shougo/ddc-filter-sorter_lsp_kind'
+group = 'ddc'
+
+[[plugins]]
+repo = 'Shougo/ddc-filter-converter_remove_overlap'
+group = 'ddc'
+
+[[plugins]]
+repo = 'Shougo/ddc-filter-converter_truncate_abbr'
+group = 'ddc'
+
+[[plugins]]
+repo = 'Shougo/ddc-filter-converter_kind_labels'
+group = 'ddc'
 
 [[plugins]]
 repo = 'tani/ddc-fuzzy'
-depends = ['denops.vim' , 'ddc.vim']
+group = 'ddc'
 
 [[plugins]]
 repo = 'delphinus/ddc-ctags'
-depends = ['denops.vim' , 'ddc.vim']
+group =  'ddc'
 
 [[plugins]]
 repo = 'vim-skk/skkeleton'
 depends = ['denops.vim']
+hooks_file = '$BASE_DIR/vim/ddc_skkeleton.vim'
 
 [[plugins]]
 repo = 'yasunori0418/statusline_skk.vim'
 on_source = ['skkeleton']
 
-
-# [[plugins]]
-# repo = 'Shougo/ddc-source-nextword'
-# " -> NextWord
-# " \		'nextword' : {
-# " \				'mark' : '[NextWord]',
-# " \				'minAutoCompleteLength' : 3,
-# " \				'isVolatile' : v:true,
-# " \				'matchers' : ['matcher_head'],
-# " \				'sorters' : ['sorter_rank'],
-# " \			},
-	
-
-## ===== DDC Sources

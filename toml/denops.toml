@@ -1,0 +1,34 @@
+[[plugins]]
+repo = 'vim-denops/denops.vim'
+hooks_file = '$BASE_DIR/vim/denops.vim'
+
+[[plugins]]
+repo = 'vim-denops/denops-startup-recorder.vim'
+on_source = 'denops.vim'
+
+[[plugins]]
+repo = 'lambdalisue/vim-kensaku'
+depends = 'denops.vim'
+denops_wait = false
+
+[[plugins]]
+repo = 'vim-skk/skkeleton'
+depends = 'denops.vim'
+on_map = { ict = '<Plug>(skkeleton-)'}
+denops_wait = false
+hooks_file = '$BASE_DIR/vim/skkeleton.vim'
+
+[[plugins]]
+repo = 'NI57721/skkeleton-state-popup'
+on_source = 'skkeleton'
+
+[[plugins]]
+repo = 'NI57721/skkeleton-henkan-highlight'
+on_source = 'skkeleton'
+hook_source = '''
+execute 'luafile ' . '$BASE_DIR/lua/plugin_skkeleton_henkan.lua'->expand()
+'''
+
+[[plugins]]
+repo = 'yasunori0418/statusline_skk.vim'
+on_source = ['skkeleton']

@@ -33,20 +33,19 @@ export class Config extends BaseConfig {
 		//
 		// const vimrcs = [];
 		//
-		// args.contextBuilder.setGlobal({
+		args.contextBuilder.setGlobal({
 		// 	vimrcs,
-		// 	extParams: {
-		// 		installer: {
-		// 			checkDiff: true,
-		// 			logFilePath: "~/.neovim_cache/dpp/installer-log.txt",
-		// 			githubAPIToken: Deno.env.get("GITHUB_API_TOKEN"),
-		// 		},
-		// 	},
-		// 	protocols: [
-		// 		"git",
-		// 		"http"
-		// 	],
-		// });
+			extParams: {
+				installer: {
+					checkDiff: true,
+					logFilePath: "~/.neovim_cache/dpp/installer-log.txt",
+					githubAPIToken: Deno.env.get("GITHUB_API_TOKEN"),
+				},
+			},
+			protocols: [
+				"git",
+			],
+		});
 
 		const [context, options] = await args.contextBuilder.get(args.denops);
 		const protocols = await args.denops.dispatcher.getProtocols() as Record<string, Protocol>;
@@ -67,7 +66,9 @@ export class Config extends BaseConfig {
 		if (tomlExt) {
 			const action = tomlExt.actions.load;
 			const tomlPromises = [
-				{ path: "$BASE_DIR/dpp.toml", lazy: false },
+				{ path: "$BASE_DIR/toml/denops.toml", lazy: false },
+				{ path: "$BASE_DIR/toml/dpp.toml", lazy: false },
+				// { path: "$BASE_DIR/toml/ddc.toml", lazy: false },
 			].map((tomlFile) => action.callback({
 				denops: args.denops,
 				context,
