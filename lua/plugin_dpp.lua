@@ -115,7 +115,7 @@ if  loadstate then
 	vim.notify("dpp make state")
 	dpp.make_state( dpp_base , dpp_config )
 else
-	 vim.notify("dpp loadstate is success")
+	 vim.notify("dpp loadstate is failed")
 end
 
 

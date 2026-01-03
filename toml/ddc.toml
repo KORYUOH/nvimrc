@@ -141,12 +141,8 @@ group = 'ddc'
 repo = 'delphinus/ddc-ctags'
 group =  'ddc'
 
-[[plugins]]
-repo = 'vim-skk/skkeleton'
-depends = ['denops.vim']
-hooks_file = '$BASE_DIR/vim/ddc_skkeleton.vim'
+# [[plugins]]
+# depends = ['denops.vim']
+# hooks_file = '$BASE_DIR/vim/ddc_skkeleton.vim'
 
-[[plugins]]
-repo = 'yasunori0418/statusline_skk.vim'
-on_source = ['skkeleton']
 
